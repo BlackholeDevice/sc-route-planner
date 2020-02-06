@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: blackholedevice
+      comment: 'Implement initial table structure'
+      preConditions:
+        - not:
+            - tableExists:
+                tableName: body
+      changes:
+        - sqlFile:
+            path: db/changelog/sql/0.sql

@@ -1,0 +1,22 @@
+debug: false
+
+logging:
+  file:
+    name: /var/log/@artifactId@.log
+    clean-history-on-start: true
+  level:
+    root: info
+
+spring:
+  datasource:
+    password: ${POSTGRES_PASSWORD}
+    username: ${POSTGRES_USER}
+    url: jdbc:postgresql://localhost:5432/sc
+  liquibase:
+    password: ${spring.datasource.password}
+    user: ${spring.datasource.username}
+    url: ${spring.datasource.url}
+  jpa:
+    database: postgresql
+    hibernate:
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

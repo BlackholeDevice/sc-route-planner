@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <td>
+      <rc-async-field (changed)="onSystemChanged($event)" name="System" [items]="systems"></rc-async-field>
+    </td>
+    <td>
+      <rc-async-field (changed)="onPlanetChanged($event)" name="Planet" [items]="planets"></rc-async-field>
+    </td>
+    <td colspan="2">
+      <rc-async-field name="Location" [items]="locations"></rc-async-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <rc-static-field name="Ship" disabled="true" value="-- not working yet --"></rc-static-field>
+    </td>
+    <td>
+      <rc-static-field name="Jump drive" disabled="true" value="-- not working yet --"></rc-static-field>
+    </td>
+    <td></td>
+    <td>
+      <button mat-raised-button color="accent" class="pull-right">Calculate</button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-tab-group  [selectedIndex]="navLink.value"
+                  (selectedIndexChange)="navLink.setValue($event)" color="accent">
+    <mat-tab label="Locations">
+      <ng-template matTabContent>
+        <rc-calculator-card></rc-calculator-card>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Coordinates">
+      <table>
+      <tr>
+        <td>
+          <rc-static-field name="x" type="number"></rc-static-field>
+        </td>
+        <td>
+          <rc-static-field name="y" type="number"></rc-static-field>
+        </td>
+        <td>
+          <rc-static-field name="z" type="number"></rc-static-field>
+        </td>
+      </tr>
+      </table>
+    </mat-tab>
+    <mat-tab label="Share">
+      <rc-coordinate-card></rc-coordinate-card>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

@@ -1,0 +1,11 @@
+<ng-container *ngIf="(items | async) || {}; let items$">
+    <mat-form-field *ngIf="items$.length; else noItems" [color]="color" style="width: 100%">
+      <input type="text" [placeholder]="name" aria-label="text" matInput [matAutocomplete]="field" [formControl]="control"/>
+      <mat-autocomplete #field="matAutocomplete" [displayWith]="getName">
+        <mat-option *ngFor="let item of items$" [value]="item">{{getName(item)}}</mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  <ng-template #noItems>
+    <rc-static-field [name]="name" [value]="'-- no ' + name + 's --' | lowercase" disabled="true"></rc-static-field>
+  </ng-template>
+</ng-container>

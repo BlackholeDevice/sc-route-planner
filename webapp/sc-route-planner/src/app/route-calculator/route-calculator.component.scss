@@ -1,0 +1,25 @@
+.centered {
+  position: absolute;
+  width: 1000px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pull-left {
+  position: absolute;
+  left: 5px
+}
+
+.pull-left > mat-form-field {
+  margin-left: 5px
+}
+
+.fill {
+  height: 100%;
+  width: 100%;
+}
+
+:host ::ng-deep mat-card {
+  margin-left: 5px;
+}
